@@ -14,7 +14,14 @@ This paper reviews SEMAT's Essence framework and kernel, describes the field stu
 \section{SEMAT ESSENCE OVERVIEW}
 In 2009, Ivar Jacobson, Bertrand Meyer, and Richard Soley started work on the \quotes{Software Engineering Method and Theory} (SEMAT) with the goal of \quotes{re-founding software engineering as a rigorous discipline} \cite{JacobsonCallForAction}. While many software engineering principles, techniques, practices and methods exist, the SEMAT founders' ambition is to create a general theory of software engineering and a unifying process framework. Out of their initiative has emerged the SEMAT Essence language and kernel, which became an Object Management Group (OMG) beta standard in 2013.
 
-The core idea of Essence is that software projects exhibit universal behavior and transition through identifiable states as they progress. Essence groups these states together by different software engineering aspects or dimensions called \quotes{alphas.} Essence identifies seven alphas as core to every software engineering project: \textbf{Stakeholders}, \textbf{Opportunity}, \textbf{Requirements}, \textbf{Software System}, \textbf{Team}, \textbf{Way of Working}, and \textbf{Work}. These seven alphas serve as the Essence kernel as illustrated in Figure 1.
+The core idea of Essence is that software projects exhibit universal behavior and transition through identifiable states as they progress. Essence groups these states together by different software engineering aspects or dimensions called \quotes{alphas.} Essence identifies seven alphas as core to every software engineering project: \textbf{Stakeholders}, \textbf{Opportunity}, \textbf{Requirements}, \textbf{Software System}, \textbf{Team}, \textbf{Way of Working}, and \textbf{Work}. These seven alphas serve as the Essence kernel as illustrated in Figure \ref{EssenceKernel}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/EssenceKernel.png}
+\caption{Essence kernel alphas and their states }
+\label{EssenceKernel}
+\end{figure}
 
 Each alpha progresses through a number of states during the project lifecycle. For example, the \textbf{Stakeholders} alpha progresses through the states \textit{Recognized}, \textit{Represented}, \textit{Involved}, \textit{In Agreement}, \textit{Satisfied for Deployment}, and \textit{Satisfied in Use}. Each state includes a checklist to help determine if the project has achieved that state. Each checklist item provides a goal to be reached in order to progress to that state.
 
@@ -59,7 +66,90 @@ The first section below describes the context of each project involved during th
 
 \subsection{Practicum Projects' Context}
 
-The authors introduced Essence to seven student teams: three geographically distributed student teams, referred as Distributed-1 to Distributed-3 for the purpose of this paper, and four co-located student teams, referred as Co-located-1 to Co-located-4. As shown in Table 1, each team worked on creating or evolving a software solution for a different client, like an electric car fleet management system or a survivable social network. By design, the projects had a medium to high level of technical complexity, as they often involved multiple technologies or platforms or integrate with legacy systems.
+
+\begin{table*}[t]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\caption{Practicum projects' context}
+\label{PracticumProjectsContext}
+% \begin{tabular}{|p{0.6in}|p{1.1in}|p{1.1in}|}
+\begin{tabular}{|p{0.75in}|p{1.05in}|p{0.3in}|p{1.05in}|p{0.7in}|p{2.3in}|}
+\hline
+\textbf{Team Name} &
+\textbf{Industry Project} &
+\textbf{Team Size} &
+\textbf{Team Distribution} & 
+\textbf{Average Work Experience} &
+\textbf{Technical Complexity} \\
+\hline
+\hline
+\multicolumn{6}{|l|}{\textbf{First Pilot Projects}} \\ 
+\hline
+
+Distributed-1 & 
+Rendering of audio streams for accessibility purpose &
+3 &
+Distributed within same time zone &
+10 years &
+Integration with legacy code on a single platform involving C, HTML5 and open-source technology. \\
+\hline
+
+Distributed-2 & 
+Access and preservation of electronic journals & 
+4 & 
+Distributed across 2 time zones & 
+6 years &
+Integration with legacy code on a single platform involving Java, MongoDB, Apache Jena and open-source technology. \\
+ \hline
+
+Distributed-3 & 
+Survivable social network & 
+4 & 
+Distributed across 2 time zones & 
+8 years &
+Multi-platform involving Ruby on Rails, Javascript, jQuery Mobile. Embedded system constraints. \\
+\hline
+
+\multicolumn{6}{|l|}{\textbf{Second Pilot Projects}} \\ 
+\hline
+
+Co-located-1 & 
+Electric vehicle fleet management & 
+2 & 
+Co-located & 
+3 years & 
+Green-field development involving Query, Node.js and MongoDB. Integration with Rest APIs for two vehicle brands. \\
+\hline
+
+Co-located-2 & 
+Sonification of financial trading information & 
+4 & 
+Co-located & 
+3 years & 
+Integrates with third party APIs (Yahoo! and Google Finance). Involves Objective C, Ruby on Rails, iOS, Google App Engine and Python. Requires financial knowledge. Has a special focus on user experience. \\
+\hline
+
+Co-located-3 & 
+Mobile performance testing & 
+3 & 
+Co-located & 
+4 years & 
+Xcode, Instruments, Eclipse, iOS 6.0, Android 4.2, jQuery Mobile, HTML5, Benchmark.js, Appception, Pivotal tracker, Redmine, GitHub, RubyMine, Rails 3.2, Ruby 1.9.2. Heroku, Amazon EC2, HighCharts.js, CSS3, Cordova \\
+\hline
+
+Co-located-4 & 
+Virtual sensors definition and management & 
+5 & 
+Co-located & 
+5 years & 
+Multi-platforms involving HTML5, Javascript and j2ee. \\
+\hline
+
+\end{tabular}
+\end{table*}
+
+
+The authors introduced Essence to seven student teams: three geographically distributed student teams, referred as Distributed-1 to Distributed-3 for the purpose of this paper, and four co-located student teams, referred as Co-located-1 to Co-located-4. As shown in Table \ref{PracticumProjectsContext}, each team worked on creating or evolving a software solution for a different client, like an electric car fleet management system or a survivable social network. By design, the projects had a medium to high level of technical complexity, as they often involved multiple technologies or platforms or integrate with legacy systems.
 
 The geographically distributed, part time students were working professionals with an average of eight years of development experience. Their practicum projects ran for 15 weeks, during which each student dedicated about 20 hours per week to the project. They worked in small teams of three to four members distributed across one or two time zones.
 
@@ -69,7 +159,7 @@ The course syllabus imposed a few milestones and deliverables (like roadmap, sta
 
 Even though the student population was quite diverse in terms of origin and culture, by the time the students started their practicum project they were immersed in the North American culture for at least eight months.
 
-Table 1 summarizes the context of each practicum project in terms of the following dimensions \cite{AmblerDAD, BoehmBalancingAgilityAndDiscipline, KruchtenContextualizingAgile}: team size, team distribution, average work experience, and technical complexity.
+Table \ref{PracticumProjectsContext} summarizes the context of each practicum project in terms of the following dimensions \cite{AmblerDAD, BoehmBalancingAgilityAndDiscipline, KruchtenContextualizingAgile}: team size, team distribution, average work experience, and technical complexity.
 
 Essence was introduced to the geographically distributed teams in the context of a first set of pilot projects, and to the co-located teams in the context of a second set of pilot projects
 
@@ -77,7 +167,14 @@ Essence was introduced to the geographically distributed teams in the context of
 \subsubsection{First Pilot Projects - Incremental Approach}
 In the Spring 2013 semester, the authors introduced the SEMAT Essence framework to three geographically distributed student teams at the beginning of the project. Because first impressions are critical for adoption, and because the researchers were uncertain of the value provided by Essence, we made the decision of introducing the framework with minimum overhead to avoid adoption resistance and minimize potential waste.
 
-We briefly introduced Essence to all students using a slide presentation of about 20 minutes. Since the teams were distributed, a set of physical Essence cards was sent to each student, and a digital Essence board was created using Google Drawing (see Figure 2). The digital board included one row for each of the seven alphas in the Kernel. Each row contained the sequence of states that the alpha progresses through during the project lifecycle.
+We briefly introduced Essence to all students using a slide presentation of about 20 minutes. Since the teams were distributed, a set of physical Essence cards was sent to each student, and a digital Essence board was created using Google Drawing (see Figure \ref{DigitalEssenceBoard}). The digital board included one row for each of the seven alphas in the Kernel. Each row contained the sequence of states that the alpha progresses through during the project lifecycle.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.40in]{project_steering_images/DigitalEssenceBoard.png}
+\caption{Digital Essence board}
+\label{DigitalEssenceBoard}
+\end{figure}
 
 After the initial presentation, the alphas were introduced incrementally over a number of 30 minute sessions, in order to make the experience as lightweight as possible. Each team met individually with a faculty and applied Essence on their practicum project. As an example, here is what happened with one team over a one-month period:
 
@@ -91,7 +188,14 @@ After the initial presentation, the alphas were introduced incrementally over a 
 
 For each alpha, the team identified the current state, the target state, and any work items necessary to progress from the current to the target state. The identification of the current and target states was done through an informal discussion until the team reached an agreement.
 
-To continue the example above, during the second session the team identified \textit{Conceived} as the current state for the \textbf{Requirements} alpha and \textit{Bounded} for the target state. Indeed all the items on the \textit{Conceived} checklist were satisfied while a few items on the Bounded checklist were not satisfied. In order to achieve \textit{Bounded}, the team first needed to define the project scope and clarify the success criteria with the client, as illustrated in Figure 3. The work items were dealt with right away or added to the team's work item list or backlog.
+To continue the example above, during the second session the team identified \textit{Conceived} as the current state for the \textbf{Requirements} alpha and \textit{Bounded} for the target state. Indeed all the items on the \textit{Conceived} checklist were satisfied while a few items on the Bounded checklist were not satisfied. In order to achieve \textit{Bounded}, the team first needed to define the project scope and clarify the success criteria with the client, as illustrated in Figure \ref{WorkItems}. The work items were dealt with right away or added to the team's work item list or backlog.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/WorkItems.png}
+\caption{Work items to reach the Bounded state}
+\label{WorkItems}
+\end{figure}
 
 With mentoring from faculty, Essence was introduced to the geographically distributed teams using the incremental approach described above. For each team, and following the initial presentation of the Essence framework, four sessions of about 30 minutes long were necessary in order to introduce all the seven alphas incrementally. During each session, elements relevant to our study were jointly logged by students and faculty as described in section 3.3 below.
 
@@ -103,10 +207,17 @@ The workshop was time-boxed to 90 minutes and included all students. It consiste
 A couple of changes were introduced compared to the first pilot projects:
 
 \begin{itemize}
-    \item \textbf{Moving from physical cards to physical strips.} Handling a large set of cards could be a hassle. Therefore, we decided to create strips instead, as illustrated in Figure 4. For each alpha, one strip represents the typical sequence of states that the alpha progresses through during the project lifecycle. This way, we could easily provide the students with the information they needed to work on various alphas, one alpha at a time. Note that since the students were all physically present during the workshop, no digital boards were used.
+    \item \textbf{Moving from physical cards to physical strips.} Handling a large set of cards could be a hassle. Therefore, we decided to create strips instead, as illustrated in Figure \ref{OneAlphaStrip}. For each alpha, one strip represents the typical sequence of states that the alpha progresses through during the project lifecycle. This way, we could easily provide the students with the information they needed to work on various alphas, one alpha at a time. Note that since the students were all physically present during the workshop, no digital boards were used.
     
     \item \textbf{Adoption of a poker game approach for state identification.} In order to remove anchoring bias, the informal way of identifying the current and target states was replaced with a \quotes{poker game} approach. In that context, each participant does a blind determination of their current state and all reveal their current state at the same time. In case of disagreement, the team discusses the different points of view until the participants reach an agreement. This technique is a simplification of Wideband Delphi \cite{StellmanAppliedPM} and agile estimation using Planning Poker \cite{GrenningPlanningPoker}, as the participants perform only one round of \quotes{estimation.} Just like Delphi and Planning Poker, the value is in the conversation, and allowing the team members to work through their different perspectives.
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/OneAlphaStrip.png}
+\caption{One strip per alpha}
+\label{OneAlphaStrip}
+\end{figure}
 
 Using the workshop approach described above, and with mentoring from faculty, Essence was introduced to the co-located teams over a 90 minutes session. On average, 10 minutes were necessary for a team to cover one alpha, and most teams were able to cover the seven alphas during the workshop. Students and faculty jointly logged elements relevant to our study as described in the following section.
 
@@ -116,7 +227,35 @@ Once Essence was introduced, the teams were asked to continue leveraging the app
 
 A faculty member was present to facilitate each session. Faculty involvement was kept at a minimum to limit influencing the steering of the project. The faculty's role was constrained to guiding the team through the application of the Essence monitoring and steering approach, and to validating the objectivity of the team's self-assessment of their project state. By listening to the team's discussions, and asking clarification questions as needed, the faculty gauged the project state. At times, this helped reduce the tendency of some teams to be overly pessimistic or optimistic about the project state.
 
-For the purpose of the field study, progress and work items were recorded jointly by the students and faculty using the teams' Essence progress log, as shown in Figure 5.
+For the purpose of the field study, progress and work items were recorded jointly by the students and faculty using the teams' Essence progress log, as shown in Table \ref{EssenceProgressLog}.
+
+\begin{table*}[]
+\centering
+\caption{Essence progress log}
+\renewcommand{\arraystretch}{1.4}
+\label{EssenceProgressLog}
+\begin{tabular}{|l|l|l|p{3.25in}|}
+\hline
+\multicolumn{4}{|l|}{Date:}                                         \\ \hline
+\hline
+Alpha           & Current State & Target State & Work Items / Notes \\
+\hline
+Stakeholders    &               &              &                    \\ \hline
+Opportunity     &               &              &                    \\ \hline
+Requirements    &               &              &                    \\ \hline
+Software System &               &              &                    \\ \hline
+Team            &               &              &                    \\ \hline
+Way of Working  &               &              &                    \\ \hline
+Work            &               &              &                    \\ \hline
+\end{tabular}
+\end{table*}
+
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=3.30in]{project_steering_images/EssenceProgressLog.png}
+% \caption{Essence progress log}
+% \label{EssenceProgressLog}
+% \end{figure}
 
 The distributed students mostly used their digital Essence board, while the co-located teams used both digital Essence board and strips. Some students kept their strips handy and used them throughout the project lifecycle while others preferred to rely on the digital board.
 
@@ -135,13 +274,21 @@ At the end of the projects a survey was sent to the students, including the foll
 \textbf{Survey Question 6}: Anything else that we should know?
 
 \section{FIELD STUDY ANALYSIS \& INTERPRETATION}
-Our research questions relate to the value provided by the SEMAT Essence's monitoring and steering approach. The researchers measured the qualitative value based on students' feedback collected mostly during the weekly SEMAT sessions, course reflection reports, and final survey. The researchers measured the quantitative value based on alpha state progression as well as the number of work items generated during the weekly SEMAT sessions and allowing bringing the project to a higher state. Refer to Table 3 in the Appendix for the raw data collected on alpha state progression, and to Figure 10 under Research Question 3 for the number of work items generated by the approach per week.
+Our research questions relate to the value provided by the SEMAT Essence's monitoring and steering approach. The researchers measured the qualitative value based on students' feedback collected mostly during the weekly SEMAT sessions, course reflection reports, and final survey. The researchers measured the quantitative value based on alpha state progression as well as the number of work items generated during the weekly SEMAT sessions and allowing bringing the project to a higher state. Refer to Figure \ref{FieldStudyRowData} in the Appendix for the raw data collected on alpha state progression, and to Figure \ref{NewWorkItemsGenerated} under Research Question 3 for the number of work items generated by the approach per week.
 
 \textbf{Research Question 1}: Does the SEMAT Essence's monitoring and steering approach provide value to the project team?
 
 Our field study shows that students receive value from SEMAT Essence's monitoring and steering approach provided by the kernel alphas and their states. In our survey, 90\% of the students said that following the approach was worth their time (80\% of the students participated in the survey.) Similarly, 80\% said that they will use the approach on their next project.
 
-By following the approach, project teams monitored their progression through the Essence states over time, as illustrated in Figure 6 for team Co-located-4. Every week this team generated on average 6 new work items during their SEMAT session, and then acted on these work items in order to bring the project to a higher state.
+By following the approach, project teams monitored their progression through the Essence states over time, as illustrated in Figure \ref{AlphaProgressionColocated4} for team Co-located-4. Every week this team generated on average 6 new work items during their SEMAT session, and then acted on these work items in order to bring the project to a higher state.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/AlphaProgressionColocated4.png}
+\caption{Alpha progression for team Co-located-4}
+\label{AlphaProgressionColocated4}
+\end{figure}
+
 
 In conclusion, most students have a positive perception of this approach as it helps them make decisions allowing to move their project forward.
 
@@ -152,14 +299,29 @@ The benefits that a project team receives from SEMAT Essence's monitoring and st
 \begin{itemize}
     \item \textbf{The team steps back from its daily tasks and examines its project holistically.} One student noted: \participantQuote{Essence gives us a chance to step back and look at the project as a whole, from a bird's-eye view. There are aspects that we tend to ignore when focused on the technology. Essence is very useful, because it makes me think about these particular aspects.} Similarly, another student noted: \participantQuote{I like the fact that Essence provides a structured way of thinking about critical aspects of the project at different stages of the project. Without Essence, our team could have overlooked some of these aspects.} Stepping back and looking at the project holistically is a healthy exercise providing the distance and perspectives needed to understand a situation, reflect, and make decisions. When asked about what they like the most about Essence, most students mentioned reflection or retrospective. For instance one student noted: \participantQuote{Though the team was holding retrospectives every week already, having Essence discussions be a part of it allowed the team to touch on important aspects of the project.}
     
-    \item \textbf{The team records progress accomplished and identifies what remains to be done.} When asked about what she liked the most about Essence, one student answered: \participantQuote{The choice of alphas: they seem to be exactly the right areas to monitor to promote the success of a software project.} The Essence mechanism for monitoring progress is illustrated in Figure 7. The chart shows the progress made by team Distributed-3 at week 5, compared to the practicum target state established by faculty. The team has been making good progress towards the target goal in most dimensions except \textbf{Software System} that lags at state 1 (\quotes{\textit{Architecture Selected}}). This situation served as a red flag and a reminder that the team needed to focus its effort on taking their software system to the next level. The approach was used as a similar risk management mechanism in other instances. When asked if he would use Essence on his next project, one student answered: \participantQuote{Yes, it 's great for team reflection and risk management.}
+    \item \textbf{The team records progress accomplished and identifies what remains to be done.} When asked about what she liked the most about Essence, one student answered: \participantQuote{The choice of alphas: they seem to be exactly the right areas to monitor to promote the success of a software project.} The Essence mechanism for monitoring progress is illustrated in Figure \ref{ProjectStateDistributed3}. The chart shows the progress made by team Distributed-3 at week 5, compared to the practicum target state established by faculty. The team has been making good progress towards the target goal in most dimensions except \textbf{Software System} that lags at state 1 (\quotes{\textit{Architecture Selected}}). This situation served as a red flag and a reminder that the team needed to focus its effort on taking their software system to the next level. The approach was used as a similar risk management mechanism in other instances. When asked if he would use Essence on his next project, one student answered: \participantQuote{Yes, it 's great for team reflection and risk management.}
     
-    \item \textbf{The team seeks guidance on what directions to take and identifies goals to transition to a higher project state.} Team Distributed-1 noted: \participantQuote{Essence gives us structure and direction.} Another student commented: \participantQuote{Essence is useful, as it gives you an agenda or checklist based on various dimensions (even though I was skeptical at first).} Essence provides a simple project steering mechanism. For each alpha, the identified target state provides the direction to take, and its checklist provides goals to reach. For instance and to continue the example above, during week 5 team Distributed-3 identified \quotes{\textit{Demonstrated}} as its target state for \textbf{Software System}, with a number of goals including demonstrating the key architecture characteristics, as illustrated in Figure 7.
+    \item \textbf{The team seeks guidance on what directions to take and identifies goals to transition to a higher project state.} Team Distributed-1 noted: \participantQuote{Essence gives us structure and direction.} Another student commented: \participantQuote{Essence is useful, as it gives you an agenda or checklist based on various dimensions (even though I was skeptical at first).} Essence provides a simple project steering mechanism. For each alpha, the identified target state provides the direction to take, and its checklist provides goals to reach. For instance and to continue the example above, during week 5 team Distributed-3 identified \quotes{\textit{Demonstrated}} as its target state for \textbf{Software System}, with a number of goals including demonstrating the key architecture characteristics, as illustrated in Figure \ref{ProjectStateDistributed3}.
     
     \item \textbf{The team decides what to do to reach the target goals. Once the team identifies the goals, the team members rely on their software engineering knowledge and experience to decide how to reach these goals.} Indeed, Essence does not prescribe the use of any existing method (like Scrum or XP) or set of practices or work items. Instead, the team has the flexibility to leverage any method or set of practices that best suit their needs, and decide what work items to perform to reach the goals set by the target state. As a consequence, our seven practicum teams were able to leverage Essence even though they all used a different set of software engineering practices. When asked if he would use Essence on his next project, one student answered: \participantQuote{Yes, especially with a project team that is not used to the same software engineering process. In that instance Essence is a backdrop at the basis of the communication about all the considerations for the success of the project.} Another student added: \participantQuote{It is simple, lightweight and useful.}
 \end{itemize}
 
-The team accelerates its state progression by acting on its work items as soon as possible and iterating through the steps described above. Figure 8 illustrates this iterative process.
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/ProjectStateDistributed3.png}
+\caption{Project state for team Distributed-3 at week 5, with direction and goals for Software System}
+\label{ProjectStateDistributed3}
+\end{figure}
+
+
+The team accelerates its state progression by acting on its work items as soon as possible and iterating through the steps described above. Figure \ref{EssenceMonitoringLoop} illustrates this iterative process.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/EssenceMonitoringLoop.png}
+\caption{Essence monitoring and steering loop}
+\label{EssenceMonitoringLoop}
+\end{figure}
 
 In answer to our second research question, the approach adds value by providing the project team with a holistic view of the project, a mechanism for monitoring progress and steering projects, as well as an effective structure for team reflection and risk management. This is provided in a simple, lightweight, non-prescriptive and method-agnostic fashion.
 
@@ -175,9 +337,24 @@ The value that the teams receive from SEMAT Essence's monitoring and steering ap
     \item The faculty in charge of the practicum course, and who has taught the course for 10 years, noted: \participantQuote{Compared to previous years, I see a much better early project organization with lot less floundering. I hope that we keep using Essence in the future. We should definitely keep it at the beginning of the projects.}
 \end{itemize}
 
-The alpha progression of team Co-located-3 illustrates the decrease in value, as seen in Figure 9. The chart shows that the team progresses well during the first half of the project, then reaches a plateau or stable state during a few weeks, before progressing again at the end of the project. This picture represents most teams' progressions.
+The alpha progression of team Co-located-3 illustrates the decrease in value, as seen in Figure \ref{AlphaProgressionColocated3}. The chart shows that the team progresses well during the first half of the project, then reaches a plateau or stable state during a few weeks, before progressing again at the end of the project. This picture represents most teams' progressions.
 
-By analyzing the work items generated by the team during the weekly SEMAT sessions, we find that the initial progression in Figure 9 is driven by those work items. Indeed these work items significantly contribute to bringing the project to a higher state. However, the final progression is done independently of Essence as the approach generates few work items at the end of the project. Most teams experienced this phenomenon, as illustrated in Figure 10 showing a consistent drop of work items over time.
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/AlphaProgressionColocated3.png}
+\caption{Alpha progression for team Co-located-3}
+\label{AlphaProgressionColocated3}
+\end{figure}
+
+
+By analyzing the work items generated by the team during the weekly SEMAT sessions, we find that the initial progression in Figure \ref{AlphaProgressionColocated3} is driven by those work items. Indeed these work items significantly contribute to bringing the project to a higher state. However, the final progression is done independently of Essence as the approach generates few work items at the end of the project. Most teams experienced this phenomenon, as illustrated in Figure \ref{NewWorkItemsGenerated} showing a consistent drop of work items over time.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/NewWorkItemsGenerated.png}
+\caption{New work items generated per week}
+\label{NewWorkItemsGenerated}
+\end{figure}
 
 Despite the value decrease, the students' perception of the approach remains positive by the end of the project according to the survey responses. Indeed a majority of students answered without qualification that they found Essence worth their time and will use the approach on their next project. A majority of students also mentioned reflection or retrospective as a strength of the approach. One student mentioned: \participantQuote{Even though we are not generating new tasks, the [SEMAT] meetings remain useful as they give us the opportunity to reflect upon our project.} Similarly, team Distributed-1 noted in its reflection report: \participantQuote{The team was pleased to see that Essence covered ‘The Way of Working' as well as ‘The Team'. These two topics generated useful team introspection at the beginning of the practicum and were nice reminders that the team does constant checkups for the overall condition of the members and the project.}
 
@@ -187,9 +364,16 @@ In conclusion, the SEMAT Essence's monitoring and steering approach provided by 
 
 The previous section shows that the effectiveness of the approach decreases over time. This phenomenon could be explained by a number of factors. One factor relates to the fact that the need for the approach varies throughout the project lifecycle. For instance, as the project team matures and becomes a high-performing team producing high quality outcome, it becomes a self-steering team requiring less support from the approach. Similarly, once most project risks have been mitigated, the team requires less risk management support. Therefore, unless there is a disruptive event reverting the project to a lower state, the value decrease is to be expected.
 
-In addition, some kernel characteristics influence the value decrease. Most Essence alphas have more states supporting the progression through the initial project phase compared to later phases. Figure 11 illustrates this phenomenon using the RUP \cite{KrollRUP} phases (Inception, Elaboration, Construction, and Transition) as an example. The chart shows that for most alphas, the number of states per phase is higher in Inception compared to the other phases. For five out of seven alphas, there is only one state in Construction. Most project teams spend the majority of their time in Construction. As a result, for these alphas the teams end-up remaining in the same state during their entire Construction phase. This lack of alpha states covering the Construction phase might be due to the fact that most of the technical work done in Construction is practice-specific, and therefore not supported by the universal kernel. Further investigations are necessary to identify potential ways to extend the kernel so it better supports the work done during Construction.
+In addition, some kernel characteristics influence the value decrease. Most Essence alphas have more states supporting the progression through the initial project phase compared to later phases. Figure \ref{NumberOfAlphaStatesPerRUPPhase} illustrates this phenomenon using the RUP \cite{KrollRUP} phases (Inception, Elaboration, Construction, and Transition) as an example. The chart shows that for most alphas, the number of states per phase is higher in Inception compared to the other phases. For five out of seven alphas, there is only one state in Construction. Most project teams spend the majority of their time in Construction. As a result, for these alphas the teams end-up remaining in the same state during their entire Construction phase. This lack of alpha states covering the Construction phase might be due to the fact that most of the technical work done in Construction is practice-specific, and therefore not supported by the universal kernel. Further investigations are necessary to identify potential ways to extend the kernel so it better supports the work done during Construction.
 
-By definition, the Essence kernel is geared towards steering a project or release throughout its entire lifecycle in a fairly linear fashion dictated by the alpha state progression. By repeating through the Essence monitoring and steering loop (see Figure 8), the team steers the project or release through the sequence of states for each alpha. This process is designed to support the work done at the release level and not to support the work done at the iteration level because of the following reasons:
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/NumberOfAlphaStatesPerRUPPhase.png}
+\caption{Number of alpha states per RUP phase}
+\label{NumberOfAlphaStatesPerRUPPhase}
+\end{figure}
+
+By definition, the Essence kernel is geared towards steering a project or release throughout its entire lifecycle in a fairly linear fashion dictated by the alpha state progression. By repeating through the Essence monitoring and steering loop (see Figure \ref{EssenceMonitoringLoop}), the team steers the project or release through the sequence of states for each alpha. This process is designed to support the work done at the release level and not to support the work done at the iteration level because of the following reasons:
 
 \begin{itemize}
     \item The kernel is lifecycle-independent and therefore does not provide specific support for iterative development.
@@ -244,7 +428,27 @@ This approach requires that each team invest in one upfront workshop during whic
 
 We recommend adjusting the workshop duration based on the team size and any other known parameters that might influence the length of the conversations, like team dynamic or project uncertainty. We also recommend having one dedicated faculty or coach per team.
 
-Table 2 summarizes and compares the incremental and workshop introduction approaches. We recommend the workshop approach when introducing Essence, unless faced with initial adoption resistance that may require a slower incremental approach.
+Table \ref{ComparingWorkshopAppoaches} summarizes and compares the incremental and workshop introduction approaches. We recommend the workshop approach when introducing Essence, unless faced with initial adoption resistance that may require a slower incremental approach.
+
+\begin{table}[]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\caption{Comparison of introduction approaches}
+\label{ComparingWorkshopAppoaches}
+\begin{tabular}{|p{0.6in}|p{1.1in}|p{1.1in}|}
+\hline
+Approach      & Incremental                                                                 & Workshop  \\
+\hline
+Description   & Essence alphas are introduced incrementally over a number of short sessions & Essence alphas are introduced all at once during a single session \\
+\hline
+Benefits      & Brings immediate value with minimum overhead                                & Brings immediate and optimum value (all alphas are covered)       \\
+\hline
+Drawbacks     & Full benefit is delayed until complete introduction of alphas               & Requires initial overhead                                         \\
+\hline
+When to Apply & In case of adoption resistance                                              & Always, except in case of adoption resistance  \\                  
+\hline
+\end{tabular}
+\end{table}
 
 Given our recommendation of one faculty per team, in the future, we plan on introducing Essence and conducting a full assessment during a 90-minute team meeting. In a course with five teams, scheduling five separate team meetings is easier than trying to do five simultaneous team meetings with five instructors.
 
@@ -257,7 +461,15 @@ We recommend introducing the \textbf{Stakeholder} and \textbf{Opportunity} alpha
 
 \subsection{A Word of Caution}
 As noted by William Cameron \cite{CameronSociologicalThinking}, \quotes{not everything that can be counted counts, and not everything that counts can be counted.} This is especially true when it comes to individual and team performance evaluation, where using metrics could be dangerous. Inappropriate metrics could be used (like measuring a developer performance based on the number of lines of code produced), metrics could be gamed, and metrics do not give the full picture.
-As an example, Figure 12 shows the final state of our distributed teams at the end of their project. From the chart, one might infer that Team Distributed-3 outperformed Team Distributed-1, which in turn outperformed Team Distributed-2 that lagged behind. In fact, despite having the highest project state, Team Distributed-3's work was slightly disappointing according to both the clients and faculty. The team ended-up with a lower grade compared to the other teams. This was due to quality issues during various product demonstrations and a lack of architecture documentation that surfaced during the team final presentation. This makes the team self-assessment of the \textbf{Software System} alpha and therefore of its overall project state questionable. Team Distributed-2 lagged only behind because the initial solution proposed by the client turned out to be infeasible, and the team did an excellent job redirecting the project into a constructive direction and hence earned an excellent grade. The routinely low \textbf{Software System} alpha state served as a red flag for risk management purposes, not evaluation purposes.
+As an example, Figure \ref{AvoidThisKindOfComparison} shows the final state of our distributed teams at the end of their project. From the chart, one might infer that Team Distributed-3 outperformed Team Distributed-1, which in turn outperformed Team Distributed-2 that lagged behind. In fact, despite having the highest project state, Team Distributed-3's work was slightly disappointing according to both the clients and faculty. The team ended-up with a lower grade compared to the other teams. This was due to quality issues during various product demonstrations and a lack of architecture documentation that surfaced during the team final presentation. This makes the team self-assessment of the \textbf{Software System} alpha and therefore of its overall project state questionable. Team Distributed-2 lagged only behind because the initial solution proposed by the client turned out to be infeasible, and the team did an excellent job redirecting the project into a constructive direction and hence earned an excellent grade. The routinely low \textbf{Software System} alpha state served as a red flag for risk management purposes, not evaluation purposes.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=3.30in]{project_steering_images/AvoidThisKindOfComparison.png}
+\caption{Final project state of the distributed teams: Avoid this kind of comparison}
+\label{AvoidThisKindOfComparison}
+\end{figure}
+
 
 In conclusion, we recommend leveraging the approach to identify projects at risk rather than for performance evaluation purposes. Some teams might be only ahead because they are overly optimistic about their project state, while others might be behind because of circumstances beyond their control.
 
@@ -278,73 +490,50 @@ We are currently working with another set of practicum teams at Carnegie Mellon 
 We would like to acknowledge the contributions of all the reviewers, and thank them for their insightful comments on early drafts of this paper. A special thanks to Hakan Erdogmus and Maria Nelson for their thorough reviews and invaluable suggestions, and to Ed Katz for recommending that we conduct our field study in the context of his practicum course and for his support throughout the study. Finally, we would like to warmly thank the students who participated in the study, for their openness and insights.
 
 \section{APPENDIX}
-Table 3 below provides the reader with the field study row data on alpha state progression. Each number in bold (from 1 to 6) represents an alpha state. Each number in italic (from 2 to 15) represents the week during which the team reaches the state. For instance, team Distributed-1 reaches the \textbf{Stakeholder} state 1 at week 2. Two or more italic numbers in one cell reflects a state backtracking. For instance, team Co-located 2 reaches the \textbf{Team} state 3 at week 2. The team then progresses to a higher state, but backtracks to state 3 at week 10.
+Figure \ref{FieldStudyRowData} below provides the reader with the field study row data on alpha state progression. Each number in bold (from 1 to 6) represents an alpha state. Each number in italic (from 2 to 15) represents the week during which the team reaches the state. For instance, team Distributed-1 reaches the \textbf{Stakeholder} state 1 at week 2. Two or more italic numbers in one cell reflects a state backtracking. For instance, team Co-located 2 reaches the \textbf{Team} state 3 at week 2. The team then progresses to a higher state, but backtracks to state 3 at week 10.
+
+\begin{figure*}[h]
+\centering
+\includegraphics[width=6.80in]{project_steering_images/FieldStudyRowData.png}
+\caption{Field study row data on alpha state progression}
+\label{FieldStudyRowData}
+\end{figure*}
 
 
+% \begin{table*}[]
+% \centering
+% \renewcommand{\arraystretch}{1.3}
+% \caption{Field study row data on alpha state progression}
+% \label{FieldStudyRowDatal}
+% \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+% \hline
+%                   & \multicolumn{6}{l|}{Stakeholders} & \multicolumn{6}{l|}{Opportunity} & \multicolumn{6}{l|}{Requirements} \\ \hline
+%                   & 1   & 2   & 3   & 4   & 5   & 6   & 1   & 2   & 3  & 4   & 5   & 6   & 1   & 2   & 3   & 4   & 5   & 6   \\ \hline
+% Team Distributed-1 & 2   & 3   & 3   & 3   & 14  &     &     &     & 2  & 3   & 14  &     &     & 4   & 5   & 7   & 14  &     \\ \hline
+% Team Distributed-2 & 3   & 3   & 4   & 6   &     &     &     &     & 2  & 4   &     &     & 3   & 4   & 7   & 11  &     &     \\ \hline
+% Team Distributed-3 & 3   & 4   & 4   & 4   & 13  &     & 2   & 3   & 3  & 4   & 13  &     & 3   & 4   & 4   & 6   & 13  &     \\ \hline
+% Team Co-located-1  & 2   & 2   & 2   & 3   & 10  & 10  & 2   & 2   & 2  & 10  & 11  &     & 2   & 2   & 3   & 3   & 11  &     \\ \hline
+% Team Co-located-2  & 3   & 9   & 9   & 9   & 10  & 11  & 2   & 3   & 6  & 6   & 11  &     & 2   & 3   & 5   & 6   & 11  & 11  \\ \hline
+% Team Co-located-3  & 2   & 4   & 5   & 10  & 10  & 10  & 2   & 2   & 2  & 5   & 10  & 10  & 2   & 3   & 3   & 6   & 10  & 11  \\ \hline
+% Team Co-located-4  & 2   & 3   & 4   & 6   & 10  & 10  & 2   & 3   & 4  & 5   & 10  &     & 2   & 4   & 4   & 6   & 10  & 10  \\ \hline
+% \end{tabular}
+% \end{table*}
 
 
-
-
-Table 1. Practicum projects' context
-
-Team Name
-Industry Project
-Team Size
-Team Distribution
- 
-Average Work Experience
- 
- 
- 
-Technical Complexity
-First Pilot Projects
-Distributed-1
-Rendering of audio streams for accessibility purpose
-3
-Distributed within same time zone
- 
-10 years
-Integration with legacy code on a single platform involving C, HTML5 and open-source technology.
-Distributed-2
-Access and preservation of electronic journals
-4
-Distributed across
-2 time zones
-6 years
-Integration with legacy code on a single platform involving Java, MongoDB, Apache Jena and open-source technology.
-Distributed-3
-Survivable social network
-4
-Distributed across
-2 time zones
-8 years
- 
-Multi-platform involving Ruby on Rails, Javascript, jQuery Mobile. Embedded system constraints.
-Second Pilot Projects
-Co-located-1
-Electric vehicle fleet management
-2
-Co-located
- 
- 
-3 years
-Green-field development involving Query, Node.js and MongoDB. Integration with Rest APIs for two vehicle brands.
-Co-located-2
-Sonification of financial trading information
-4
-Co-located
-3 years
-Integrates with third party APIs (Yahoo! and Google Finance). Involves Objective C, Ruby on Rails, iOS, Google App Engine and Python. Requires financial knowledge. Has a special focus on user experience.
-Co-located-3
-Mobile performance testing
-3
-Co-located
-4 years
-Xcode, Instruments, Eclipse, iOS 6.0, Android 4.2, jQuery Mobile, HTML5, Benchmark.js, Appception, Pivotal tracker, Redmine, GitHub, RubyMine, Rails 3.2, Ruby 1.9.2. Heroku, Amazon EC2, HighCharts.js, CSS3, Cordova
-Co-located-4
-Virtual sensors definition and management
-5
-Co-located
-5 years
- 
-Multi-platforms involving HTML5, Javascript and j2ee.
+% \begin{table*}[]
+% \centering
+% \caption{My caption}
+% \label{my-label}
+% \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+% \hline
+%                   & \multicolumn{6}{l|}{Stakeholders} & \multicolumn{6}{l|}{Opportunity} & \multicolumn{6}{l|}{Requirements} & \multicolumn{6}{l|}{Software System} & \multicolumn{5}{l|}{Team} & \multicolumn{6}{l|}{Way of Working} & \multicolumn{6}{l|}{Work} \\ \hline
+%                   & 1   & 2   & 3   & 4   & 5   & 6   & 1   & 2   & 3  & 4   & 5   & 6   & 1   & 2   & 3   & 4   & 5   & 6   & 1    & 2   & 3    & 4    & 5   & 6   & 1   & 2  & 3  & 4   & 5   & 1   & 2   & 3   & 4    & 5    & 6   & 1  & 2  & 3 & 4 & 5  & 6  \\ \hline
+% Team Distributed-1 & 2   & 3   & 3   & 3   & 14  &     &     &     & 2  & 3   & 14  &     &     & 4   & 5   & 7   & 14  &     & 5    & 7   & 14   & 14   &     &     &     &    & 4  & 14  & 15  &     & 3   & 5   & 14   & 14   & 15  &    &    & 5 & 7 & 14 & 15 \\ \hline
+% Team Distributed-2 & 3   & 3   & 4   & 6   &     &     &     &     & 2  & 4   &     &     & 3   & 4   & 7   & 11  &     &     &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% Team Distributed-3 & 3   & 4   & 4   & 4   & 13  &     & 2   & 3   & 3  & 4   & 13  &     & 3   & 4   & 4   & 6   & 13  &     &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% Team Co-located-1  & 2   & 2   & 2   & 3   & 10  & 10  & 2   & 2   & 2  & 10  & 11  &     & 2   & 2   & 3   & 3   & 11  &     &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% Team Co-located-2  & 3   & 9   & 9   & 9   & 10  & 11  & 2   & 3   & 6  & 6   & 11  &     & 2   & 3   & 5   & 6   & 11  & 11  &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% Team Co-located-3  & 2   & 4   & 5   & 10  & 10  & 10  & 2   & 2   & 2  & 5   & 10  & 10  & 2   & 3   & 3   & 6   & 10  & 11  &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% Team Co-located-4  & 2   & 3   & 4   & 6   & 10  & 10  & 2   & 3   & 4  & 5   & 10  &     & 2   & 4   & 4   & 6   & 10  & 10  &      &     &      &      &     &     &     &    &    &     &     &     &     &     &      &      &     &    &    &   &   &    &    \\ \hline
+% \end{tabular}
+% \end{table*}
